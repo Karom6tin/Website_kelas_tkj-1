@@ -1,0 +1,547 @@
+@media (max-width: 600px-100px) {
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #2c3e50;
+    color: white;
+    overflow-y: auto; 
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}}
+@media (max-width: 768px) {
+    .navbar {
+        height: 60px;
+    }
+    .navbar-logo {
+        height: 40px;
+    }
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    background: #2c3e50; /* Change to your desired background color */
+    color: white;
+    padding: 10px ;
+    z-index: 1000; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.navbar-logo {
+    height: 80px; /* Tinggi logo */
+    width: auto; /* Proporsi tetap */
+    cursor: pointer; /* Kursor berubah jadi pointer saat diarahkan ke logo */
+}
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+
+.menu {
+    margin-left: auto; /* Mendorong menu ke sisi kanan */
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.menu ul li {
+    display: inline;
+    margin: 0 15px; /* Adjusted margin */
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px; /* Reduced font size */
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #e74c3c; /* Change color on hover */
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #3498db 0%, #8e44ad 100%);
+    min-height: 100vh; /* Ensure it covers full height */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* Keep content above stars */
+}
+/*hamburger*/
+.hamburger-menu {
+    display: none; /* Hanya muncul di layar kecil */
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 30px; /* Posisi di pojok kanan */
+    top: 15px; /* Sejajar dengan logo */
+}
+
+/* Responsivitas untuk Tablet dan HP */
+@media (max-width: 768px) {
+    .menu ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background-color: rgba(0, 0, 0, 0.8); /* Latar belakang menu dropdown */
+        border-radius: 5px;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .menu ul.active {
+        display: flex;
+    }
+
+    .hamburger-menu {
+        display: block; /* Tampilkan ikon hamburger */
+    }
+}
+/*home*/
+/* Animasi untuk teks "Selamat Datang" */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Mulai dari posisi lebih rendah */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Berakhir di posisi aslinya */
+    }
+}
+
+@keyframes glowing {
+    0% {
+        text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+    }
+    50% {
+        text-shadow: 0 0 10px #ff9900, 0 0 20px #ff9900, 0 0 40px #ff9900;
+    }
+    100% {
+        text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+    }
+}
+
+.welcome-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    animation: fadeInUp 1.5s ease-out, glowing 2s infinite alternate;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 1.2rem;
+    color: white;
+    font-style: italic;
+    margin-bottom: 20px;
+    animation: fadeInUp 2s ease-out;
+}
+
+.hero-content {
+    text-align: center;
+    position: relative;
+    color: white;
+}
+
+.logo-center img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+/* Posisi dan tampilan salju */
+.falling-stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none; /* Agar salju tidak menghalangi interaksi */
+    z-index: 0; /* Di bawah konten utama */
+    overflow: hidden;
+}
+
+/* Bintang/salju */
+.star {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fall 3s linear infinite; /* Animasi jatuh */
+}
+
+/* Animasi salju */
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh) translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) translateX(-20vw);
+        opacity: 0.5;
+    }
+}
+
+
+/*card siswa*/ 
+.student-cards {
+    padding: 80px 20px;
+    background: #ecf0f1;
+    text-align: center;
+}
+
+.student-cards h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: rgb(15, 65, 172);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.897);
+    margin: 15px;
+    padding: 20px;
+    display: block;
+    flex: 1 1 calc(300px);
+    box-sizing: border-box;
+    text-align: center;
+    width: 200px; /* Set a fixed width */
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.card img {
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    padding: 5px;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    margin: 10px 0;
+    font-size: 60px;
+    color: #050505;
+}
+
+.card p {
+    margin: 5px 0;
+    color: #f6fafa;
+}
+/*card guru*/
+.teacher-cards {
+    padding: 50px 20px;
+    background: #fafbfc;
+    text-align: center;
+}
+.teacher-cards h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+/*STRUKTUR KELAS*/
+.class-structure .card-container img {
+    width: 100%; /* Gambar akan menyesuaikan lebar kontainer */
+    max-width: 600px; /* Membatasi ukuran maksimum */
+    height: auto; /* Mempertahankan rasio gambar */
+    border-radius: 10px; /* Menambahkan sudut melengkung */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan */
+}
+
+
+
+
+/* Styling untuk Jadwal Piket */
+.piket-list {
+    background-color: #ecf0f1;
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.piket-list h3 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+.piket-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.piket-card {
+    background: linear-gradient(135deg, #3498db 0%, #8e44ad 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.piket-card h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+}
+
+.piket-card p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.piket-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Efek hover untuk interaksi */
+.piket-card p strong {
+    color: #ffd700; /* Warna kuning keemasan untuk penekanan */
+}
+
+
+/* JADWAL PELAJARAN */
+/* JADWAL PELAJARAN */
+.schedule {
+    padding: 20px;
+    background: linear-gradient(135deg, #3498db 0%, #8e44ad 100%);
+    border-radius: 8px;
+    margin: 20px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.p {
+    font-size: 30px;
+}
+.h3{
+    font-size: 60px;
+}
+
+.schedule-container {
+    display: flex;
+    overflow-x: auto; /* Mengaktifkan scroll horizontal */
+    scroll-snap-type: x mandatory; /* Mengaktifkan snap saat geser */
+    gap: 20px; /* Menambahkan jarak antar elemen */
+    padding: 10px;
+    scroll-behavior: smooth; /* Transisi scroll yang mulus */
+}
+
+.schedule-content {
+    display: flex;
+    flex-wrap: nowrap; /* Tidak membungkus elemen */
+    gap: 20px; /* Menambahkan jarak antar elemen */
+}
+
+.schedule-day {
+    flex: 0 0 calc(50% - 20px); /* Setiap elemen mengambil 50% dari lebar container, kurangi gap */
+    box-sizing: border-box;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 18px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    scroll-snap-align: start; /* Mengatur elemen untuk snap ke awal */
+}
+
+/* Tombol panah */
+.arrow-prev,
+.arrow-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10; /* Supaya tombol berada di atas konten */
+}
+
+.arrow-prev {
+    left: 10px;
+}
+
+.arrow-next {
+    right: 10px;
+}
+
+.arrow {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin: 0 5px; /* Jarak antara tombol dan konten */
+}
+
+.arrow:hover {
+    background-color: #0056b3;
+}
+
+/* RESPONSIF - MEDIA QUERY UNTUK LAYAR KECIL */
+@media (max-width: 768px) {
+    /* Menyesuaikan lebar kontainer dan tampilan di layar kecil */
+    .schedule-container {
+        flex-direction: column; /* Jadikan kontainer vertikal */
+        align-items: flex-start;
+    }
+
+    .schedule-content {
+        width: 100%; /* Atur agar setiap item memenuhi lebar layar */
+    }
+
+    .schedule-day {
+        padding: 20px; /* Mengurangi padding untuk ukuran layar kecil */
+        margin-bottom: 10px; /* Memberikan ruang antar hari */
+    }
+
+}
+
+/* RESPONSIF - MEDIA QUERY UNTUK PONSEL */
+@media (max-width: 480px) {
+    /* Mengurangi ukuran font agar lebih nyaman di ponsel */
+    .schedule-day h4 {
+        font-size: 1.2rem;
+    }
+
+    .schedule-day p {
+        font-size: 1rem;
+    }
+
+    .p {
+        font-size: 24px; /* Mengurangi ukuran teks untuk ponsel */
+    }
+}
+
+/*kegiatan kelas*/
+.activities {
+    padding: 40px;
+    background-color: #f9f9f9;
+}
+
+.activities h3 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.activity-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.activity {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    width: 250px;
+}
+
+.activity img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.activity h4 {
+    font-size: 20px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.activity p {
+    font-size: 14px;
+    color: #555;
+    padding: 0 10px 10px;
+}
+
+/*galeri kelas*/
+.galeri {
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.galeri h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.galeri-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    justify-content: center;
+}
+
+.galeri-item {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1; /* Membuat kotak persegi */
+}
+
+.galeri-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Menjaga gambar tetap proporsional */
+    transition: transform 0.3s ease;
+}
+
+.galeri-item img:hover {
+    transform: scale(1.1); /* Efek zoom saat dihover */
+}
